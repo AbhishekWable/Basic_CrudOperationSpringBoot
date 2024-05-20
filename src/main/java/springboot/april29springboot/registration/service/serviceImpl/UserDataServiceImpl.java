@@ -26,7 +26,8 @@ public class UserDataServiceImpl implements UserDataService {
         usr.setMob(userRequestDto.getMob());
         usr.setMaritalStatus(userRequestDto.getMaritalStatusId());
         usr.setNationality(userRequestDto.getNationality());
-        usr.setBloodGroup(userRequestDto.getBloodGroupId());
+        usr.setBloodGroup(userRequestDto.getBloodGroup());
+        usr.setPrefix(userRequestDto.getPrefix());
         return userDataRepo.save(usr);
     }
 }

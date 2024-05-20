@@ -7,7 +7,7 @@ import springboot.april29springboot.onetoone.entity.Person;
 import springboot.april29springboot.onetoone.repository.AadharRepo;
 import springboot.april29springboot.onetoone.repository.PersonRepo;
 
-import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("person")
@@ -22,14 +22,22 @@ public class PersonController {
     @PostMapping("save")
     public String savePerson(@RequestBody Person person){
 
-        personRepo.save(person);
+//      personRepo.save(person);
+
+        Aadhar adhar = new Aadhar();
+        adhar.setNumber(person.getAadhar().getNumber());
+        aadharRepo.save(adhar);
+
+        Person person1 = new Person();
+        person1.setAadhar(adhar);
+        person1.setName(person.getName());
+        person1.setAddress(person.getAddress());
+        personRepo.save(person1);
         return "person saved..";
 
-
-
     }
-    @GetMapping("getPersonByIdAndName/{id}/{name}")
-    public Person getPerson(@PathVariable Long id,@PathVariable String name){
-        return personRepo.getPersonByIdAndName(id,name);
+    @GetMapping("getPersonByIdAndName/{id}")
+    public Optional<Person> getPerson(@PathVariable Long id){
+        return personRepo.findById(id);
     }
 }

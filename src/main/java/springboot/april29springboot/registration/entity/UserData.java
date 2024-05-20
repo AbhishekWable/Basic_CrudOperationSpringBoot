@@ -19,9 +19,12 @@ public class UserData {
     private String lName;
     private LocalDate dob;
     private Integer age;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "gender_id")
     private Gender gender;
+    @ManyToOne
+    @JoinColumn(name = "prefix_id")
+    private Prefix prefix;
 
     private Long mob;
 

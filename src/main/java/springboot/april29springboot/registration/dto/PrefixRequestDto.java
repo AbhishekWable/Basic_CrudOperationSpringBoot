@@ -5,7 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BloodGroupRequestDto {
-
-    private String bloodGroup;
+public class PrefixRequestDto {
+    private String prefix;
 }

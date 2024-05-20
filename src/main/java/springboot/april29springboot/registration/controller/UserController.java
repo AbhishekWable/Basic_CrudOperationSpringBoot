@@ -17,8 +17,6 @@ public class UserController {
     private UserDataService userDataService;
     @PostMapping("saveUser")
     public String saveData(@RequestBody UserRequestDto userRequestDto){
-        System.out.println(userRequestDto.getAge());
-        System.out.println(userRequestDto.getDob());
          userDataService.saveUser(userRequestDto);
          return "User Added Successfully...";
     }

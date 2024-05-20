@@ -6,6 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MaritalStatusRequestDto {
-    private Long id;
     private String maritalStatus;
 }
