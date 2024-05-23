@@ -38,6 +38,6 @@ public class PersonController {
     }
     @GetMapping("getPersonByIdAndName/{id}")
     public Optional<Person> getPerson(@PathVariable Long id){
-        return personRepo.findById(id);
+        return personRepo.findByPerson(id);
     }
 }

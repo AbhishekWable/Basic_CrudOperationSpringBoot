@@ -19,9 +19,15 @@ public class UserData {
     private String lName;
     private LocalDate dob;
     private Integer age;
+
     @ManyToOne
     @JoinColumn(name = "gender_id")
     private Gender gender;
+
+    @ManyToOne
+    @JoinColumn(name = "isd_code_id")
+    private IsdCode isdCode;
+
     @ManyToOne
     @JoinColumn(name = "prefix_id")
     private Prefix prefix;
@@ -32,7 +38,9 @@ public class UserData {
     @JoinColumn(name = "marital_status_id")
     private MaritalStatus maritalStatus;
 
-    private String nationality;
+    @ManyToOne
+    @JoinColumn(name = "nationality_id")
+    private Nationality nationality;
 
     @ManyToOne
     @JoinColumn(name = "blood_group_id")

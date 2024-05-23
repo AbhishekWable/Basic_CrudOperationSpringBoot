@@ -16,7 +16,4 @@ public class Country {
     private String name;
     private Integer c_code;
 
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private Set<State> states;
 }

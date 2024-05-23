@@ -23,11 +23,12 @@ public class CountryServiceImpl implements CountryService{
         country1.setC_code(countryRequestDto.getC_code());
         countryRepo.save(country1);
 
-        var state1=new State();
-
-        state1.setCountry(country1);
-        state1.setName(state1.getName());
-        state1.setS_code(state1.getS_code());
-        stateRepo.save(state1);
+      countryRequestDto.getStates().forEach(s ->{
+          var state=new State();
+          state.setName(s.getName());
+          state.setS_code(s.getS_code());
+          state.setCountry(country1);
+          stateRepo.save(state);
+      });
     }
 }

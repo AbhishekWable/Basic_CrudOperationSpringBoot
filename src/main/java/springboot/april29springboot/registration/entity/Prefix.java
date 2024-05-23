@@ -15,4 +15,8 @@ public class Prefix {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String prefix;
+
+
+
+
 }

@@ -8,6 +8,8 @@ import springboot.april29springboot.registration.entity.UserData;
 import springboot.april29springboot.registration.repository.UserDataRepo;
 import springboot.april29springboot.registration.service.UserDataService;
 
+import java.util.List;
+
 
 @Service
 public class UserDataServiceImpl implements UserDataService {
@@ -28,6 +30,12 @@ public class UserDataServiceImpl implements UserDataService {
         usr.setNationality(userRequestDto.getNationality());
         usr.setBloodGroup(userRequestDto.getBloodGroup());
         usr.setPrefix(userRequestDto.getPrefix());
+        usr.setIsdCode(userRequestDto.getIsdCode());
         return userDataRepo.save(usr);
+    }
+
+    @Override
+    public List<UserData> getAllUser() {
+        return userDataRepo.findAll();
     }
 }

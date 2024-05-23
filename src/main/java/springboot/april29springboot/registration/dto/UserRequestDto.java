@@ -2,10 +2,7 @@ package springboot.april29springboot.registration.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import springboot.april29springboot.registration.entity.BloodGroup;
-import springboot.april29springboot.registration.entity.Gender;
-import springboot.april29springboot.registration.entity.MaritalStatus;
-import springboot.april29springboot.registration.entity.Prefix;
+import springboot.april29springboot.registration.entity.*;
 
 import java.time.LocalDate;
 @Getter
@@ -21,9 +18,10 @@ public class UserRequestDto {
     private Gender gender;
     private Long mob;
     private Prefix prefix;
+    private IsdCode isdCode;
     private MaritalStatus maritalStatusId;
 
-    private String nationality;
+    private Nationality nationality;
 
     private BloodGroup bloodGroup;
 

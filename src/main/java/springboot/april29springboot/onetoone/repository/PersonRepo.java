@@ -6,7 +6,7 @@ import springboot.april29springboot.onetoone.entity.Person;
 
 import java.util.Optional;
 
-public interface PersonRepo extends JpaRepository<Person,Long> {
-@Query(value = "select * from person where id=?", nativeQuery = true)
-Optional<Person> findById(Long id);
+public interface PersonRepo extends JpaRepository<Person, Long> {
+    @Query(value = "select * from person where id=?1", nativeQuery = true)
+    Optional<Person> findByPerson(Long id);
 }
