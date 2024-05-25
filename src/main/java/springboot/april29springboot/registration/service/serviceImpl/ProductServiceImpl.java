@@ -13,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product saveProduct(Product product) {
         Product pd=new Product();
-        pd.setName(product.getName());
+        pd.setProductName(product.getProductName());
         pd.setPrice(product.getPrice());
         return productRepo.save(pd);
     }

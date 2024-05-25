@@ -12,7 +12,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer saveCustomer(Customer customer) {
         Customer cs=new Customer();
-        cs.setName(customer.getName());
+        cs.setCustomerName(customer.getCustomerName());
         cs.setAddress(customer.getAddress());
         return customerRepo.save(customer);
     }
