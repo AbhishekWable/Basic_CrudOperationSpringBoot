@@ -9,14 +9,13 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
-public class OrderTable {
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long quantity;
     private Long total;
     private LocalDate dateOfOrder;
-
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;

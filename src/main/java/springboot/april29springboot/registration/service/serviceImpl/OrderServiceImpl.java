@@ -43,6 +43,7 @@ public class OrderServiceImpl implements OrderService {
         OrderTable or=new OrderTable();
         or.setQuantity(orderDto.getQuantity());
         or.setTotal(orderDto.getPrice() * orderDto.getQuantity());
+        or.setDateOfOrder(orderDto.getDateOfOrder());
 
         or.setProduct(saveProduct);
         or.setCustomer(saveCustomer);
