@@ -6,6 +6,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springboot.april29springboot.aop.Boy;
+import springboot.april29springboot.aop.Girl;
 import springboot.april29springboot.di.Company;
 import springboot.april29springboot.di.Employee;
 import springboot.april29springboot.ioc.Jio;
@@ -16,17 +18,27 @@ import springboot.april29springboot.ioc.Vodafone;
 public class April29springbootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(April29springbootApplication.class, args);
-//		Vodafone vodafone=context.getBean(Vodafone.class);
-//		vodafone.calling();
-//		vodafone.msg();
-//
-//		Jio jio=context.getBean(Jio.class);
-//		jio.calling();
-//		jio.msg();
-//
-//		Company company=context.getBean(Company.class);
-//		company.display();
+		ConfigurableApplicationContext context=SpringApplication.run(April29springbootApplication.class, args);
+		Vodafone vodafone=context.getBean(Vodafone.class);
+		vodafone.calling();
+		vodafone.msg();
+
+		Jio jio=context.getBean(Jio.class);
+		jio.calling();
+		jio.msg();
+
+		Company company=context.getBean(Company.class);
+		company.display();
+
+		Boy boy=context.getBean(Boy.class);
+		boy.study();
+		boy.play();
+
+
+		Girl girl=context.getBean(Girl.class);
+		girl.study();
+		girl.play();
+
 	}
 //	@PostMapping("save")
 //	public String printHello(){

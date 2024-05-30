@@ -21,6 +21,8 @@ public class Company {
 //        this.employee = employee;
 //    }
 
+
+    //field base dependency injection
     public void display(){
          employee.show();
     }

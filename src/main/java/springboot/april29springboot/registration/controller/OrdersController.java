@@ -7,6 +7,8 @@ import springboot.april29springboot.registration.dto.OrdersRequestDto;
 import springboot.april29springboot.registration.entity.Orders;
 import springboot.april29springboot.registration.service.OrdersService;
 
+import java.time.LocalDate;
+
 @RestController
 @CrossOrigin("*")
 public class OrdersController {
@@ -16,8 +18,8 @@ public class OrdersController {
     public Orders saveOrders(@RequestBody OrdersRequestDto ordersRequestDto){
         return ordersService.saveOrder(ordersRequestDto);
     }
-    @GetMapping("fnGetOrder/{id_}")
-    ResponseEntity<?> fnGetOrder(@PathVariable("id_") Long id_){
-        return ordersService.fnGetOrder(id_);
+    @GetMapping("fnGetOrder/{id_}/{fromDate}/{toDate}")
+    ResponseEntity<?> fnGetOrder(@PathVariable("id_") Long id_, @PathVariable LocalDate fromDate,@PathVariable LocalDate toDate){
+        return ordersService.fnGetOrder(id_,fromDate,toDate);
     }
 }

@@ -11,6 +11,7 @@ import springboot.april29springboot.registration.repository.OrdersRepo;
 import springboot.april29springboot.registration.repository.ProductRepo;
 import springboot.april29springboot.registration.service.OrdersService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -35,10 +36,9 @@ public class OrdersServiceImpl implements OrdersService {
         or.setProduct(ordersRequestDto.getProduct());
         return ordersRepo.save(or);
     }
-
     @Override
-    public ResponseEntity<?> fnGetOrder(Long id_) {
-       List<Map<String,Object>> getData= ordersRepo.fnGetOrder(id_);
+    public ResponseEntity<?> fnGetOrder(Long id_, LocalDate fromDate,LocalDate toDate) {
+       List<Map<String,Object>> getData= ordersRepo.fnGetOrder(id_,fromDate,toDate);
         return ResponseEntity.ok(getData);
     }
 }
