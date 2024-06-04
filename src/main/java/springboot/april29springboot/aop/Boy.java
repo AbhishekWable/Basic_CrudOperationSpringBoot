@@ -5,10 +5,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Boy {
 
-    public void study(){
+    public int study(int i){
         System.out.println("Boys study");
+        return i;
     }
-    public void play(){
-        System.out.println("Boys play");
-    }
+
 }

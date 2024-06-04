@@ -31,13 +31,13 @@ public class April29springbootApplication {
 		company.display();
 
 		Boy boy=context.getBean(Boy.class);
-		boy.study();
-		boy.play();
+		boy.study(100);
+
 
 
 		Girl girl=context.getBean(Girl.class);
 		girl.study();
-		girl.play();
+
 
 	}
 //	@PostMapping("save")
